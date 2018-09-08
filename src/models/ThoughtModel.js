@@ -26,5 +26,8 @@ module.exports = function () {
     ThoughtModel.associate = () => {
       ThoughtModel.belongsTo(sequelize.models.users);
     };
+    ThoughtModel.associate = () => {
+      ThoughtModel.belongsTo(sequelize.models.challenges);
+    };
   };
 };

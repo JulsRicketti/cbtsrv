@@ -5,7 +5,7 @@ module.exports = function () {
     /** @type {Sequelize.Sequelize} */
     const sequelize = app.get('sequelize');
 
-    let ChallengeModel = sequelize.define('thoughts', {
+    let ChallengeModel = sequelize.define('challenges', {
       _id: {
         type: Sequelize.INTEGER,
         allowNull: false,
