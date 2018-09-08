@@ -12,18 +12,34 @@ module.exports = function () {
         primaryKey: true,
         autoIncrement: true
       },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'users',
+          key: '_id'
+        },
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
+      },
+
       title: {
         type: Sequelize.STRING(512),
         allowNull: false
       },
-      what: {
+      description: {
         type: Sequelize.STRING(512),
         allowNull: false
       },
-      points: {
+      difficulty: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
+      status: {
+        type: Sequelize.ENUM('complete', 'incomplete'),
+        defaultValue: 'incomplete',
+        allowNull: false
+      }
     }, {
       freezeTableName: true
     });
